@@ -12,6 +12,7 @@ organization := "org.lightning-viz"
 
 organizationName := "lightning-viz"
 
+
 organizationHomepage := Some(url("https://github.com/lightning-viz"))
 
 libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "1.1.4"
@@ -37,8 +38,6 @@ publishTo := {
 }
 
 publishArtifact in Test := false
-
-pomIncludeRepository := { _ => false }
 
 pomExtra := (
   <url>http://lightning-viz.org</url>
