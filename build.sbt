@@ -18,7 +18,13 @@ libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "1.1.4"
 
 libraryDependencies += "org.json4s" %% "json4s-native" % "3.2.9"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1"
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test"
+
+resolvers +=  "Apache Snapshot" at "https://repository.apache.org/content/repositories/snapshots"
+
+libraryDependencies += "org.apache.toree.kernel" %% "toree-kernel-api" % "0.1.0-dev9-incubating-SNAPSHOT" % "provided"
+libraryDependencies += "org.apache.toree.kernel" %% "toree-protocol" % "0.1.0-dev9-incubating-SNAPSHOT" % "provided"
+
 
 publishMavenStyle := true
 

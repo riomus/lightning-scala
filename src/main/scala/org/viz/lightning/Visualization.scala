@@ -1,17 +1,16 @@
 package org.viz.lightning
 
+import org.apache.toree.magic.MagicManager
 import org.json4s.DefaultFormats
 import org.json4s.native.Serialization
+
 import scala.language.dynamics
 import scalaj.http._
 
 class Visualization(val lgn: Lightning, val id: String, val name: String) {
 
-  if (lgn.isNotebook) {
-    //implicit val HTMLViz = org.refptr.iscala.display.HTMLDisplay[Visualization] { viz =>
-    //  viz.getHTML
-    //}
-    //org.refptr.iscala.display.display_html(this)
+  def show()(implicit magicManager:MagicManager)={
+    magicManager.findMagic("html").execute(this.getHTML)
   }
 
   def formatURL(url: String): String = {
