@@ -5,12 +5,27 @@ import org.json4s.DefaultFormats
 import org.json4s.native.Serialization
 
 import scala.language.dynamics
+import scala.util.Random
 import scalaj.http._
 
 class Visualization(val lgn: Lightning, val id: String, val name: String) {
-
   def show()(implicit magicManager:MagicManager)={
-    magicManager.findMagic("html").execute(this.getHTML)
+    val id=Random.alphanumeric.take(10).mkString("")
+    magicManager.html(
+      s"""
+<script type="application/javascript">
+window.addEventListener('DOMContentReady', function(e) {
+    var iFrame = document.getElementById( '${id}' );
+    iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+    window.removeEventListener('DOMContentReady',this)
+} );
+
+</script>
+         <iframe src="${this.getIframeLink}" width="100%" height="900px" id="${id}"  frameBorder="0">
+         </iframe>
+       """
+  )
   }
 
   def formatURL(url: String): String = {

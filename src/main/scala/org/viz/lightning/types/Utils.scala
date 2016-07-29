@@ -21,15 +21,8 @@ object Utils {
     }
   }
 
-  def getNodes(conn: Array[Array[Double]]): Array[Int] = {
-
-    if (conn.length == conn(0).length) {
-      Range(0, conn.length).toArray
-    } else {
-      val n = conn.map(l => l.max).max.toInt + 1
-      Range(0, n).toArray
-    }
-
+  def getNodes(conn: Array[Array[Double]])= {
+  conn.flatMap(_).distinct.toList
   }
 
   def getPoints(x: Array[Double], y: Array[Double]): Array[Array[Double]] = {

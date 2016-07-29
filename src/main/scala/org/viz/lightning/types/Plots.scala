@@ -65,7 +65,7 @@ trait Plots extends Base {
     val links = Utils.getLinks(conn)
     val nodes = Utils.getNodes(conn)
 
-    val data = Map("links" -> links.toList, "nodes" -> nodes.toList)
+    val data = Map("links" -> links.toList, "nodes" -> nodes)
 
     val settings = new Settings()
       .append(List(Label(label), Value(value), Colormap(colormap), Size(size)))
