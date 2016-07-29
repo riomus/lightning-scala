@@ -8,7 +8,8 @@ homepage := Some(url("http://lightning-viz.org"))
 
 description := "Scala client for interactive data visualization with Lightning."
 
-organization := "org.lightning-viz"
+//organization := "org.lightning-viz"
+organization := "com.github.riomus" // JITPACK fix
 
 organizationName := "lightning-viz"
 
@@ -49,8 +50,8 @@ pomExtra := (
       </license>
     </licenses>
     <scm>
-      <url>git@github.com:lightning-viz/lightning-scala.git</url>
-      <connection>scm:git:git@github.com:lightning-viz/lightning-scala.git</connection>
+      <url>git@github.com:riomus/lightning-scala.git</url>
+      <connection>scm:git:git@github.com:riomus/lightning-scala.git</connection>
     </scm>
     <developers>
       <developer>
