@@ -1,6 +1,6 @@
 name := "lightning-scala"
 
-version := "0.1.0-SNAPSHOT"
+version := "master-SNAPSHOT"
 
 scalaVersion := "2.10.3"
 
