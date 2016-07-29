@@ -22,7 +22,7 @@ object Utils {
   }
 
   def getNodes(conn: Array[Array[Double]])= {
-  conn.flatMap(_).distinct.toList
+  conn.flatMap(a=>a).distinct.toList
   }
 
   def getPoints(x: Array[Double], y: Array[Double]): Array[Array[Double]] = {
